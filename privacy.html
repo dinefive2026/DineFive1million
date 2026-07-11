@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Dine Five</title>
+<meta name="description" content="Read the Dine Five Privacy Policy to understand how we collect, use, and safeguard your personal information." />
+<meta name="theme-color" content="#FF6B35" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --orange:#FF6B35;
+    --orange-dark:#E8531C;
+    --red:#C62828;
+    --red-dark:#A31E1E;
+    --cream:#FFF8F0;
+    --cream-deep:#FBEFE2;
+    --charcoal:#222222;
+    --charcoal-soft:#3a3531;
+    --white:#FFFFFF;
+    --ink-60:rgba(34,34,34,.62);
+    --ink-45:rgba(34,34,34,.45);
+    --line:rgba(34,34,34,.10);
+    --shadow-warm:0 18px 50px -20px rgba(198,40,40,.28);
+    --shadow-soft:0 10px 30px -14px rgba(34,34,34,.18);
+    --radius:22px;
+    --radius-sm:14px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;letter-spacing:-.01em;font-weight:600}
+  .display{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:600}
+  
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem;
+    padding:14px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s;
+    font-family:inherit;
+  }
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:var(--shadow-warm)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 50px -18px rgba(255,107,53,.6)}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 16px 40px -18px rgba(198,40,40,.55)}
+  .btn-red:hover{transform:translateY(-3px);background:var(--red-dark)}
+  .btn-ghost{background:transparent;color:var(--charcoal);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--charcoal);transform:translateY(-2px)}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+    padding:18px 0;
+  }
+  header.scrolled{background:rgba(255,248,240,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center}
+  .logo img{height:72px;width:auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:16px}
+  .nav-links a{font-size:.82rem;font-weight:500;color:var(--charcoal-soft);transition:color .2s;position:relative}
+  .nav-links a:hover{color:var(--red)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;border-radius:11px;align-items:center;justify-content:center}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px;position:relative;transition:transform .3s,opacity .3s}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--charcoal);border-radius:2px;transition:transform .3s,opacity .3s}
+  .menu-toggle span::before{top:-7px}.menu-toggle span::after{top:7px}
+  body.menu-open .menu-toggle span{background:transparent}
+  body.menu-open .menu-toggle span::before{transform:translateY(7px) rotate(45deg)}
+  body.menu-open .menu-toggle span::after{transform:translateY(-7px) rotate(-45deg)}
+
+  .mobile-menu{
+    position:fixed;inset:0;z-index:99;background:var(--cream);
+    transform:translateY(-100%);transition:transform .45s var(--ease);
+    display:flex;flex-direction:column;justify-content:center;gap:6px;padding:90px 30px 40px;
+  }
+  body.menu-open .mobile-menu{transform:translateY(0)}
+  .mobile-menu a{font-family:'Fraunces';font-size:1.9rem;font-weight:600;padding:10px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:24px;justify-content:center}
+
+  /* ---------- Content ---------- */
+  .doc-section{
+    padding:160px 0 100px;
+  }
+  .doc-container{
+    max-width:850px;
+    margin:0 auto;
+    background:var(--white);
+    padding:60px 80px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-soft);
+    border:1px solid var(--line);
+  }
+  
+  /* Styled Document Elements */
+  .privacy-body h1{
+    font-size:clamp(2.2rem,5vw,3rem);
+    color:var(--charcoal);
+    margin-bottom:10px;
+  }
+  .privacy-body p{
+    font-size:1.05rem;
+    color:var(--charcoal-soft);
+    margin-bottom:20px;
+    line-height:1.75;
+  }
+  .privacy-body p strong{
+    color:var(--charcoal);
+  }
+  .privacy-body h2{
+    font-size:1.7rem;
+    color:var(--charcoal);
+    margin-top:40px;
+    margin-bottom:18px;
+    position:relative;
+    padding-bottom:8px;
+  }
+  .privacy-body h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:40px;
+    height:2.5px;
+    background:var(--orange);
+    border-radius:2px;
+  }
+  .privacy-body h3{
+    font-size:1.25rem;
+    color:var(--charcoal-soft);
+    margin-top:28px;
+    margin-bottom:12px;
+  }
+  .privacy-body hr{
+    border:none;
+    border-top:1px dashed var(--line);
+    margin:35px 0;
+  }
+  .privacy-body ul{
+    margin-bottom:24px;
+    padding-left:24px;
+  }
+  .privacy-body li{
+    font-size:1.02rem;
+    color:var(--charcoal-soft);
+    margin-bottom:10px;
+    line-height:1.65;
+  }
+  .privacy-body a{
+    color:var(--red);
+    font-weight:600;
+    border-bottom:1px solid transparent;
+    transition:border-color 0.2s, color 0.2s;
+  }
+  .privacy-body a:hover{
+    color:var(--red-dark);
+    border-color:var(--red-dark);
+  }
+  
+  /* Tables inside privacy policy */
+  .privacy-body table {
+    width:100%;
+    border-collapse:collapse;
+    margin:25px 0 35px;
+    font-size:0.95rem;
+    box-shadow:0 2px 10px rgba(0,0,0,0.03);
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .privacy-body th {
+    background:var(--cream-deep);
+    color:var(--charcoal);
+    font-weight:600;
+    text-align:left;
+    padding:14px 18px;
+    font-family:'Fraunces',serif;
+    font-size:1.05rem;
+  }
+  .privacy-body td {
+    padding:14px 18px;
+    border-bottom:1px solid var(--line);
+    color:var(--charcoal-soft);
+  }
+  .privacy-body tr:last-child td {
+    border-bottom:none;
+  }
+  .privacy-body tr:nth-child(even) {
+    background:rgba(255,248,240,0.4);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--cream);padding:64px 0 30px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:46px}
+  .foot-brand p{font-size:.92rem;color:var(--ink-60);margin:16px 0 22px;max-width:34ch}
+  .socials{display:flex;gap:12px}
+  .socials a{width:40px;height:40px;border-radius:11px;background:var(--white);border:1px solid var(--line);display:grid;place-items:center;color:var(--charcoal-soft);transition:transform .25s var(--ease),background .25s,color .25s}
+  .socials a:hover{transform:translateY(-3px);background:var(--orange);color:#fff;border-color:var(--orange)}
+  .socials svg{width:19px;height:19px}
+  .foot-col h4{font-family:'Inter';font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:18px}
+  .foot-col a{display:block;font-size:.92rem;color:var(--ink-60);margin-bottom:12px;transition:color .2s}
+  .foot-col a:hover{color:var(--red)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;border-top:1px solid var(--line);font-size:.84rem;color:var(--ink-45)}
+  .foot-bottom .lp{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-bottom .lp a:hover{color:var(--red)}
+
+  /* Loading State styling */
+  .loader-container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px 0;
+    color:var(--ink-45);
+  }
+  .loader {
+    width:40px;
+    height:40px;
+    border:3px solid var(--line);
+    border-radius:50%;
+    border-top-color:var(--orange);
+    animation:spin 1s ease-in-out infinite;
+    margin-bottom:16px;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Responsive styling */
+  @media(max-width:768px){
+    .doc-container{
+      padding:40px 30px;
+    }
+    .nav-links,.nav-cta .btn{display:none}
+    .menu-toggle{display:flex}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1 / -1}
+  }
+  @media(max-width:600px){
+    .doc-section{padding:120px 0 60px}
+    .doc-container{padding:30px 20px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo"><img src="logo-transparent.png" alt="Dine Five" /></a>
+    <nav class="nav-links">
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#cuisines">Cuisines</a>
+      <a href="index.html#drinks">Beer &amp; Wine</a>
+      <a href="index.html#impact">Give a meal</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#company">Company</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#download">Get the app</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#impact" class="btn btn-red">Donate a meal</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#mission">Mission</a>
+  <a href="index.html#how">How it works</a>
+  <a href="index.html#cuisines">Cuisines</a>
+  <a href="index.html#drinks">Beer &amp; Wine</a>
+  <a href="index.html#impact">Give a meal</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#company">Company</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#support">Support</a>
+  <a href="index.html#download">Get the app</a>
+</div>
+
+<!-- ===== Main Content Area ===== -->
+<section class="doc-section">
+  <div class="wrap">
+    <div class="doc-container">
+      <div id="privacy-content" class="privacy-body">
+        <div class="loader-container">
+          <div class="loader"></div>
+          <p>Loading Privacy Policy...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo"><img src="logo-transparent.png" alt="Dine Five" /></a>
+        <p>Fresh restaurant meals for just $5.99 — bringing affordable food and community support to neighborhoods everywhere.</p>
+        <div class="socials"></div>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="index.html#mission">About</a>
+        <a href="index.html#download">Contact</a>
+        <a href="index.html#cuisines">Restaurant partnerships</a>
+      </div>
+      <div class="foot-col">
+        <h4>Community</h4>
+        <a href="index.html#impact">Donation program</a>
+        <a href="index.html#impact">Recipient assistance</a>
+        <a href="index.html#impact">Give a meal</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 DineFive LLC · Registered in Virginia, USA.</span>
+      <div class="lp"><a href="privacy.html">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  toggle.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a =>
+    a.addEventListener('click', () => { document.body.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', false); })
+  );
+
+  // Fallback content in case API is unavailable or .env parsing fails
+  const fallbackContent = `
+    <h1>Privacy Policy</h1>
+     
+    <p><strong>Effective Date:</strong> January 2026</p>
+     
+    <p>
+    DineFive ("DineFive", "we", "us", or "our") is committed to protecting your privacy.
+    This Privacy Policy explains how we collect, use, disclose, and safeguard your
+    information when you use the DineFive mobile application.
+    </p>
+     
+    <p>
+    By using DineFive, you agree to the collection and use of information in accordance
+    with this Privacy Policy.
+    </p>
+     
+    <hr>
+     
+    <h2>1. Information We Collect</h2>
+     
+    <h3>Information You Provide</h3>
+     
+    <ul>
+    <li>Account information — name, email address, phone number, and password.</li>
+    <li>Profile information — profile photo and preferences.</li>
+    <li>Order information — food orders, pickup details, and order history.</li>
+    <li>Payment information — processed securely by Stripe. DineFive does not store raw card details.</li>
+    <li>Communications — messages, feedback, and customer support inquiries.</li>
+    </ul>
+     
+    <h3>Information We Collect Automatically</h3>
+     
+    <ul>
+    <li>Location data (see Section 4).</li>
+    <li>Device information such as operating system and device identifiers.</li>
+    <li>Usage data including pages viewed, app usage, and crash logs.</li>
+    <li>Push notification tokens for order updates.</li>
+    </ul>
+     
+    <h3>Information from Third Parties</h3>
+     
+    <ul>
+    <li>Google Sign-In (name, email, profile photo).</li>
+    <li>Stripe payment status and transaction identifiers.</li>
+    </ul>
+     
+    <hr>
+     
+    <h2>2. How We Use Your Information</h2>
+     
+    <p>We use your information to:</p>
+     
+    <ul>
+    <li>Create and manage your account.</li>
+    <li>Process food orders.</li>
+    <li>Display nearby restaurants.</li>
+    <li>Send order updates.</li>
+    <li>Process payments and refunds.</li>
+    <li>Personalize your experience.</li>
+    <li>Provide customer support.</li>
+    <li>Prevent fraud.</li>
+    <li>Comply with legal obligations.</li>
+    </ul>
+     
+    <hr>
+     
+    <h2>3. How We Share Your Information</h2>
+     
+    <p>We never sell your personal information.</p>
+     
+    <ul>
+    <li>Restaurants fulfilling your orders.</li>
+    <li>Stripe for payment processing.</li>
+    <li>Trusted service providers.</li>
+    <li>Legal authorities when required.</li>
+    <li>Successor entities during mergers or acquisitions.</li>
+    </ul>
+     
+    <hr>
+     
+    <h2>4. Location Data</h2>
+     
+    <p>
+    DineFive only accesses your location while you are actively using the app.
+    Location is used to:
+    </p>
+     
+    <ul>
+    <li>Find nearby restaurants.</li>
+    <li>Calculate pickup distances.</li>
+    <li>Display your position on the map.</li>
+    </ul>
+     
+    <p>
+    We do not collect location in the background. You may disable location permission
+    from your device settings.
+    </p>
+     
+    <hr>
+     
+    <h2>5. Payment Information</h2>
+     
+    <p>
+    Payments are securely processed by Stripe, a PCI-DSS compliant payment processor.
+    DineFive never stores your complete card number, CVV, or payment credentials.
+    Only transaction identifiers and payment status are retained.
+    </p>
+     
+    <p>
+    For more information, visit:
+    <a href="https://stripe.com/privacy">https://stripe.com/privacy</a>
+    </p>
+     
+    <hr>
+     
+    <h2>6. Push Notifications</h2>
+     
+    <p>DineFive may send notifications for:</p>
+     
+    <ul>
+    <li>Order confirmations.</li>
+    <li>Order status updates.</li>
+    <li>Pickup reminders.</li>
+    <li>Special offers and restaurant announcements.</li>
+    </ul>
+     
+    <p>
+    Notifications can be disabled from your device settings.
+    </p>
+     
+    <hr>
+     
+    <h2>7. Third-Party Services</h2>
+     
+    <table>
+    <thead>
+    <tr>
+    <th>Service</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Google Maps</td>
+    <td>Maps &amp; restaurant locations</td>
+    </tr>
+    <tr>
+    <td>Google Sign-In</td>
+    <td>User authentication</td>
+    </tr>
+    <tr>
+    <td>Stripe</td>
+    <td>Payment processing</td>
+    </tr>
+    <tr>
+    <td>Expo / EAS</td>
+    <td>App infrastructure</td>
+    </tr>
+    </tbody>
+    </table>
+     
+    <hr>
+     
+    <h2>8. Data Retention</h2>
+     
+    <p>
+    We retain your information while your account remains active or as necessary to
+    provide our services. You may request deletion of your account at any time.
+    Certain information may be retained where required by law or for fraud prevention.
+    </p>
+     
+    <hr>
+     
+    <h2>9. Security</h2>
+     
+    <p>We protect your data using industry-standard measures including:</p>
+     
+    <ul>
+    <li>HTTPS / TLS encryption.</li>
+    <li>Secure token authentication.</li>
+    <li>PCI-DSS compliant payment processing.</li>
+    <li>Restricted internal data access.</li>
+    </ul>
+     
+    <p>
+    No online system is completely secure, and absolute security cannot be guaranteed.
+    </p>
+     
+    <hr>
+     
+    <h2>10. Children's Privacy</h2>
+     
+    <p>
+    DineFive is not intended for children under 13 years of age. We do not knowingly
+    collect personal information from children.
+    </p>
+     
+    <hr>
+     
+    <h2>11. Your Rights</h2>
+     
+    <ul>
+    <li>Access to your personal information.</li>
+    <li>Correction of inaccurate data.</li>
+    <li>Deletion of your account.</li>
+    <li>Opt out of promotional notifications.</li>
+    <li>Receive a portable copy of your data.</li>
+    </ul>
+     
+    <p>
+    Contact us at
+    <a href="mailto:info@dinefive.com">info@dinefive.com</a>.
+    </p>
+     
+    <hr>
+     
+    <h2>12. Changes to This Privacy Policy</h2>
+     
+    <p>
+    We may update this Privacy Policy periodically. Material changes will be
+    communicated through the app or via push notification.
+    </p>
+     
+    <hr>
+     
+    <h2>13. Contact Us</h2>
+     
+    <p><strong>DineFive</strong></p>
+     
+    <p>
+    Email:
+    <a href="mailto:info@dinefive.com">info@dinefive.com</a>
+    </p>
+     
+    <p>
+    Website:
+    <a href="https://www.dinefive.com">www.dinefive.com</a>
+    </p>
+  `;
+
+  async function loadPrivacyPolicy() {
+    const container = document.getElementById('privacy-content');
+    let baseUrl = '';
+
+    try {
+      // 1. Try to fetch .env from the root
+      let response = await fetch('/.env').catch(() => null);
+      if (!response || !response.ok) {
+        response = await fetch('.env').catch(() => null);
+      }
+
+      if (response && response.ok) {
+        const text = await response.text();
+        // Parse simple env lines
+        const lines = text.split(/\r?\n/);
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (trimmed && !trimmed.startsWith('#')) {
+            const parts = trimmed.split('=');
+            if (parts.length >= 2) {
+              const key = parts[0].trim();
+              const value = parts.slice(1).join('=').trim().replace(/^['"]|['"]$/g, ''); // Strip quotes
+              if (key.toUpperCase() === 'BASE_URL' || key === 'baseUrl') {
+                baseUrl = value;
+                break;
+              }
+            }
+          }
+        }
+      }
+      
+      // 2. Fetch the content from the API if baseUrl was found
+      if (baseUrl) {
+        const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+        const apiResponse = await fetch(`${cleanBaseUrl}/legal/privacy-policy`);
+        if (apiResponse.ok) {
+          const json = await apiResponse.json();
+          if (json.success && json.data && json.data.content) {
+            container.innerHTML = json.data.content;
+            console.log("Successfully loaded privacy policy from API");
+            return;
+          }
+        }
+      }
+    } catch (error) {
+      console.error("Error loading privacy policy from API, using fallback:", error);
+    }
+
+    // Fallback if anything goes wrong
+    container.innerHTML = fallbackContent;
+  }
+
+  document.addEventListener('DOMContentLoaded', loadPrivacyPolicy);
+</script>
+</body>
+</html>
