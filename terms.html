@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Privacy Policy — Dine Five</title>
-<meta name="description" content="Read the Dine Five Privacy Policy to understand how we collect, use, and safeguard your personal information." />
+<title>Terms & Conditions — Dine Five</title>
+<meta name="description" content="Read the Dine Five Terms & Conditions." />
 <meta name="theme-color" content="#FF6B35" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,21 +108,21 @@
   }
   
   /* Styled Document Elements */
-  .privacy-body h1{
+  .terms-body h1{
     font-size:clamp(2.2rem,5vw,3rem);
     color:var(--charcoal);
     margin-bottom:10px;
   }
-  .privacy-body p{
+  .terms-body p{
     font-size:1.05rem;
     color:var(--charcoal-soft);
     margin-bottom:20px;
     line-height:1.75;
   }
-  .privacy-body p strong{
+  .terms-body p strong{
     color:var(--charcoal);
   }
-  .privacy-body h2{
+  .terms-body h2{
     font-size:1.7rem;
     color:var(--charcoal);
     margin-top:40px;
@@ -130,7 +130,7 @@
     position:relative;
     padding-bottom:8px;
   }
-  .privacy-body h2::after{
+  .terms-body h2::after{
     content:"";
     position:absolute;
     left:0;
@@ -140,40 +140,40 @@
     background:var(--orange);
     border-radius:2px;
   }
-  .privacy-body h3{
+  .terms-body h3{
     font-size:1.25rem;
     color:var(--charcoal-soft);
     margin-top:28px;
     margin-bottom:12px;
   }
-  .privacy-body hr{
+  .terms-body hr{
     border:none;
     border-top:1px dashed var(--line);
     margin:35px 0;
   }
-  .privacy-body ul{
+  .terms-body ul{
     margin-bottom:24px;
     padding-left:24px;
   }
-  .privacy-body li{
+  .terms-body li{
     font-size:1.02rem;
     color:var(--charcoal-soft);
     margin-bottom:10px;
     line-height:1.65;
   }
-  .privacy-body a{
+  .terms-body a{
     color:var(--red);
     font-weight:600;
     border-bottom:1px solid transparent;
     transition:border-color 0.2s, color 0.2s;
   }
-  .privacy-body a:hover{
+  .terms-body a:hover{
     color:var(--red-dark);
     border-color:var(--red-dark);
   }
   
-  /* Tables inside privacy policy */
-  .privacy-body table {
+  /* Tables inside terms policy */
+  .terms-body table {
     width:100%;
     border-collapse:collapse;
     margin:25px 0 35px;
@@ -183,7 +183,7 @@
     overflow:hidden;
     border:1px solid var(--line);
   }
-  .privacy-body th {
+  .terms-body th {
     background:var(--cream-deep);
     color:var(--charcoal);
     font-weight:600;
@@ -192,15 +192,15 @@
     font-family:'Fraunces',serif;
     font-size:1.05rem;
   }
-  .privacy-body td {
+  .terms-body td {
     padding:14px 18px;
     border-bottom:1px solid var(--line);
     color:var(--charcoal-soft);
   }
-  .privacy-body tr:last-child td {
+  .terms-body tr:last-child td {
     border-bottom:none;
   }
-  .privacy-body tr:nth-child(even) {
+  .terms-body tr:nth-child(even) {
     background:rgba(255,248,240,0.4);
   }
 
@@ -300,10 +300,10 @@
 <section class="doc-section">
   <div class="wrap">
     <div class="doc-container">
-      <div id="privacy-content" class="privacy-body">
+      <div id="terms-content" class="terms-body">
         <div class="loader-container">
           <div class="loader"></div>
-          <p>Loading Privacy Policy...</p>
+          <p>Loading Terms &amp; Conditions...</p>
         </div>
       </div>
     </div>
@@ -361,20 +361,19 @@
     a.addEventListener('click', () => { document.body.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', false); })
   );
 
-  async function loadPrivacyPolicy() {
-    const container = document.getElementById('privacy-content');
-    // Set loader content
+  async function loadTermsAndConditions() {
+    const container = document.getElementById('terms-content');
     container.innerHTML = `
       <div class="loader-container">
         <div class="loader"></div>
-        <p>Loading Privacy Policy...</p>
+        <p>Loading Terms &amp; Conditions...</p>
       </div>
     `;
 
     try {
-      const endpoint = 'https://dine-five-backend-production.up.railway.app/api/v1/legal/privacy-policy';
+      const endpoint = 'https://dine-five-backend-production.up.railway.app/api/v1/legal/terms-and-conditions';
       const apiResponse = await fetch(endpoint).catch((err) => {
-        throw new Error(`Network request failed. This is usually caused by CORS block, offline API server, or opening HTML directly as a local file (file:// protocol). Original error: ${err.message}`);
+        throw new Error(`Network request failed. Original error: ${err.message}`);
       });
 
       if (!apiResponse.ok) {
@@ -384,26 +383,26 @@
       const json = await apiResponse.json();
       if (json.success && json.data && json.data.content) {
         container.innerHTML = json.data.content;
-        console.log("Successfully loaded privacy policy from API");
+        console.log("Successfully loaded terms & conditions from API");
         return;
       } else {
         throw new Error("API response JSON is missing success flag or data.content");
       }
     } catch (error) {
-      console.error("Error loading privacy policy from API:", error);
+      console.error("Error loading terms & conditions from API:", error);
       container.innerHTML = `
         <div style="text-align: center; padding: 40px 0;">
           <h1 style="color: var(--red); font-family: 'Fraunces', serif; margin-bottom: 16px;">Unable to Load Document</h1>
           <p style="color: var(--charcoal-soft); font-size: 1.05rem; line-height: 1.6; max-width: 50ch; margin: 0 auto 24px;">
-            We encountered an error loading the Privacy Policy. Please check your connection and try again.
+            We encountered an error loading the Terms &amp; Conditions. Please check your connection and try again.
           </p>
-          <button onclick="loadPrivacyPolicy()" class="btn btn-red" style="font-family: inherit;">Retry</button>
+          <button onclick="loadTermsAndConditions()" class="btn btn-red" style="font-family: inherit;">Retry</button>
         </div>
       `;
     }
   }
 
-  document.addEventListener('DOMContentLoaded', loadPrivacyPolicy);
+  document.addEventListener('DOMContentLoaded', loadTermsAndConditions);
 </script>
 </body>
 </html>
