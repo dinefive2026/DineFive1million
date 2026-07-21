@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Delete Account — Dine Five</title>
+<meta name="description" content="Request the permanent deletion of your Dine Five account and personal data in compliance with our data safety standards." />
+<meta name="theme-color" content="#FF6B35" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --orange:#FF6B35;
+    --orange-dark:#E8531C;
+    --red:#C62828;
+    --red-dark:#A31E1E;
+    --cream:#FFF8F0;
+    --cream-deep:#FBEFE2;
+    --charcoal:#222222;
+    --charcoal-soft:#3a3531;
+    --white:#FFFFFF;
+    --ink-60:rgba(34,34,34,.62);
+    --ink-45:rgba(34,34,34,.45);
+    --line:rgba(34,34,34,.10);
+    --shadow-warm:0 18px 50px -20px rgba(198,40,40,.28);
+    --shadow-soft:0 10px 30px -14px rgba(34,34,34,.18);
+    --radius:22px;
+    --radius-sm:14px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;letter-spacing:-.01em;font-weight:600}
+  
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:.98rem;
+    padding:14px 28px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s;
+    font-family:inherit;
+  }
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:var(--shadow-warm)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 50px -18px rgba(255,107,53,.6)}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 16px 40px -18px rgba(198,40,40,.55)}
+  .btn-red:hover{transform:translateY(-3px);background:var(--red-dark)}
+  .btn-red:disabled{background:#e0a3a3;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-ghost{background:transparent;color:var(--charcoal);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--charcoal);transform:translateY(-2px)}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+    padding:18px 0;
+  }
+  header.scrolled{background:rgba(255,248,240,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center}
+  .logo img{height:72px;width:auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:16px}
+  .nav-links a{font-size:.82rem;font-weight:500;color:var(--charcoal-soft);transition:color .2s;position:relative}
+  .nav-links a:hover{color:var(--red)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;border-radius:11px;align-items:center;justify-content:center}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px;position:relative;transition:transform .3s,opacity .3s}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--charcoal);border-radius:2px;transition:transform .3s,opacity .3s}
+  .menu-toggle span::before{top:-7px}.menu-toggle span::after{top:7px}
+  body.menu-open .menu-toggle span{background:transparent}
+  body.menu-open .menu-toggle span::before{transform:translateY(7px) rotate(45deg)}
+  body.menu-open .menu-toggle span::after{transform:translateY(-7px) rotate(-45deg)}
+
+  .mobile-menu{
+    position:fixed;inset:0;z-index:99;background:var(--cream);
+    transform:translateY(-100%);transition:transform .45s var(--ease);
+    display:flex;flex-direction:column;justify-content:center;gap:6px;padding:90px 30px 40px;
+  }
+  body.menu-open .mobile-menu{transform:translateY(0)}
+  .mobile-menu a{font-family:'Fraunces';font-size:1.9rem;font-weight:600;padding:10px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:24px;justify-content:center}
+
+  /* ---------- Content ---------- */
+  .doc-section{
+    padding:160px 0 100px;
+  }
+  .doc-container{
+    max-width:1050px;
+    margin:0 auto;
+    background:var(--white);
+    padding:60px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-soft);
+    border:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:50px;
+    position:relative;
+    overflow:hidden;
+  }
+  
+  .info-panel {
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+  }
+  .info-header h1 {
+    font-size:clamp(2.2rem,4.5vw,2.8rem);
+    color:var(--charcoal);
+    margin-bottom:12px;
+  }
+  .info-header p {
+    font-size:1.05rem;
+    color:var(--ink-60);
+    line-height:1.6;
+  }
+  
+  .bullet-list {
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .bullet-item {
+    display:flex;
+    gap:16px;
+  }
+  .bullet-icon {
+    width:48px;
+    height:48px;
+    background:var(--cream);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color:var(--orange);
+    border:1px solid var(--line);
+  }
+  .bullet-icon.red {
+    color:var(--red);
+    background:rgba(198,40,40,0.05);
+  }
+  .bullet-text h3 {
+    font-size:1.12rem;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    margin-bottom:4px;
+    color:var(--charcoal);
+  }
+  .bullet-text p {
+    font-size:0.92rem;
+    color:var(--charcoal-soft);
+    line-height:1.5;
+  }
+  
+  /* Form Panel */
+  .form-panel {
+    background:var(--cream-deep);
+    border-radius:var(--radius-sm);
+    padding:40px;
+    border:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  
+  .form-header h2 {
+    font-size:1.5rem;
+    color:var(--charcoal);
+    margin-bottom:8px;
+  }
+  .form-header p {
+    font-size:0.88rem;
+    color:var(--ink-60);
+    margin-bottom:24px;
+  }
+  
+  .form-group {
+    margin-bottom:18px;
+    position:relative;
+  }
+  .form-group label {
+    display:block;
+    font-size:0.82rem;
+    font-weight:600;
+    margin-bottom:6px;
+    color:var(--charcoal-soft);
+    letter-spacing:0.02em;
+  }
+  .form-input {
+    width:100%;
+    padding:12px 16px;
+    border-radius:10px;
+    border:1.5px solid var(--line);
+    background:var(--white);
+    font-family:inherit;
+    font-size:0.95rem;
+    color:var(--charcoal);
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-input:focus {
+    outline:none;
+    border-color:var(--orange);
+    box-shadow:0 0 0 3px rgba(255,107,53,0.15);
+  }
+  
+  .form-select {
+    appearance:none;
+    background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a3531' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    background-size:16px;
+    padding-right:40px;
+  }
+  
+  .form-checkbox-group {
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+    margin-bottom:24px;
+  }
+  .form-checkbox-group input[type="checkbox"] {
+    appearance:none;
+    width:18px;
+    height:18px;
+    border:1.5px solid var(--line);
+    border-radius:4px;
+    background:var(--white);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    transition:background-color 0.2s, border-color 0.2s;
+    margin-top:2px;
+  }
+  .form-checkbox-group input[type="checkbox"]:checked {
+    background-color:var(--red);
+    border-color:var(--red);
+  }
+  .form-checkbox-group input[type="checkbox"]:checked::after {
+    content:"";
+    width:5px;
+    height:9px;
+    border:solid white;
+    border-width:0 2px 2px 0;
+    transform:rotate(45deg);
+    margin-bottom:2px;
+  }
+  .form-checkbox-group label {
+    font-size:0.82rem;
+    color:var(--charcoal-soft);
+    line-height:1.4;
+    cursor:pointer;
+    user-select:none;
+  }
+  
+  /* Verification Screen (Hidden initially) */
+  .step-container {
+    transition:opacity 0.3s, transform 0.3s;
+  }
+  .step-container.hidden {
+    display:none;
+    opacity:0;
+    transform:translateX(20px);
+  }
+  
+  .warning-banner {
+    background:rgba(198,40,40,0.08);
+    border-left:4px solid var(--red);
+    padding:14px;
+    border-radius:6px;
+    margin-bottom:20px;
+  }
+  .warning-banner p {
+    font-size:0.85rem;
+    color:var(--red);
+    font-weight:600;
+    line-height:1.45;
+  }
+  
+  .text-confirm-input {
+    border-color:var(--red);
+  }
+  .text-confirm-input:focus {
+    border-color:var(--red-dark);
+    box-shadow:0 0 0 3px rgba(198,40,40,0.15);
+  }
+  
+  /* Success Screen */
+  .success-screen {
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:20px 0;
+    opacity:0;
+    transition:opacity 0.4s;
+  }
+  .success-screen.active {
+    display:flex;
+    opacity:1;
+  }
+  .success-ring {
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:rgba(46,125,50,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:24px;
+    color:#2e7d32;
+    animation:scaleUp 0.5s var(--ease);
+  }
+  .success-screen h2 {
+    font-size:1.6rem;
+    color:var(--charcoal);
+    margin-bottom:12px;
+  }
+  .success-screen p {
+    font-size:0.95rem;
+    color:var(--charcoal-soft);
+    line-height:1.6;
+    max-width:320px;
+    margin-bottom:30px;
+  }
+  
+  @keyframes scaleUp {
+    from { transform:scale(0.8); opacity:0 }
+    to { transform:scale(1); opacity:1 }
+  }
+  
+  /* ---------- Footer ---------- */
+  footer{background:var(--cream);padding:64px 0 30px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:46px}
+  .foot-brand p{font-size:.92rem;color:var(--ink-60);margin:16px 0 22px;max-width:34ch}
+  .socials{display:flex;gap:12px}
+  .socials a{width:40px;height:40px;border-radius:11px;background:var(--white);border:1px solid var(--line);display:grid;place-items:center;color:var(--charcoal-soft);transition:transform .25s var(--ease),background .25s,color .25s}
+  .socials a:hover{transform:translateY(-3px);background:var(--orange);color:#fff;border-color:var(--orange)}
+  .socials svg{width:19px;height:19px}
+  .foot-col h4{font-family:'Inter';font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:18px}
+  .foot-col a{display:block;font-size:.92rem;color:var(--ink-60);margin-bottom:12px;transition:color .2s}
+  .foot-col a:hover{color:var(--red)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:26px;border-top:1px solid var(--line);font-size:.84rem;color:var(--ink-45)}
+  .foot-bottom .lp{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-bottom .lp a:hover{color:var(--red)}
+
+  /* Responsive styling */
+  @media(max-width:900px){
+    .doc-container{
+      grid-template-columns:1fr;
+      padding:40px;
+      gap:40px;
+    }
+  }
+  @media(max-width:768px){
+    .doc-section{padding:120px 0 60px}
+    .doc-container{padding:30px 20px}
+    .nav-links,.nav-cta .btn{display:none}
+    .menu-toggle{display:flex}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1 / -1}
+  }
+  @media(max-width:480px){
+    .form-panel {
+      padding:24px 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo"><img src="logo-transparent.png" alt="Dine Five" /></a>
+    <nav class="nav-links">
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#cuisines">Cuisines</a>
+      <a href="index.html#drinks">Beer &amp; Wine</a>
+      <a href="index.html#impact">Give a meal</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#company">Company</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#download">Get the app</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#impact" class="btn btn-red">Donate a meal</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#mission">Mission</a>
+  <a href="index.html#how">How it works</a>
+  <a href="index.html#cuisines">Cuisines</a>
+  <a href="index.html#drinks">Beer &amp; Wine</a>
+  <a href="index.html#impact">Give a meal</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#company">Company</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#support">Support</a>
+  <a href="index.html#download">Get the app</a>
+</div>
+
+<!-- ===== Main Content Area ===== -->
+<section class="doc-section">
+  <div class="wrap">
+    <div class="doc-container">
+      
+      <!-- Info Panel (Left Column) -->
+      <div class="info-panel">
+        <div class="info-header">
+          <h1>Account Deletion & Data Safety</h1>
+          <p>We respect your privacy and rights over your data. Follow the steps to request permanent deletion of your Dine Five account and associated records.</p>
+        </div>
+        
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></svg>
+            </div>
+            <div class="bullet-text">
+              <h3>What will be permanently deleted</h3>
+              <p>Your profile info (name, email, phone number), active meal subscriptions, saved delivery locations, and rewards balance will be completely and permanently wiped.</p>
+            </div>
+          </div>
+          
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="bullet-text">
+              <h3>Information we legally retain</h3>
+              <p>For legal, financial reporting, tax audits, and compliance purposes, anonymized details of past transactions (meal purchases and donations) will be kept in read-only vaults.</p>
+            </div>
+          </div>
+          
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="bullet-text">
+              <h3>Processing Timeline</h3>
+              <p>Once requested, your account will be immediately deactivated. Full sanitization across all backups, database servers, and third-party tools will be finalized within 7 business days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Form Panel (Right Column) -->
+      <div class="form-panel" id="formPanel">
+        
+        <!-- Step 1: User details -->
+        <div class="step-container" id="step1">
+          <div class="form-header">
+            <h2>Start Request</h2>
+            <p>Please enter your account credentials to identify your profile.</p>
+          </div>
+          
+          <form id="deleteRequestForm" onsubmit="event.preventDefault(); goToStep2();">
+            <div class="form-group">
+              <label for="fullName">FULL NAME</label>
+              <input type="text" id="fullName" class="form-input" placeholder="John Doe" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">EMAIL ADDRESS</label>
+              <input type="email" id="email" class="form-input" placeholder="john@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">PHONE NUMBER</label>
+              <input type="tel" id="phoneNumber" class="form-input" placeholder="+1 (555) 000-0000" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="reason">REASON FOR LEAVING</label>
+              <select id="reason" class="form-input form-select" required>
+                <option value="" disabled selected>Select a reason...</option>
+                <option value="privacy">Privacy concerns</option>
+                <option value="no-longer-use">I no longer use Dine Five</option>
+                <option value="too-many-notifications">Too many notifications/emails</option>
+                <option value="other">Other reason</option>
+              </select>
+            </div>
+            
+            <div class="form-group" id="otherReasonGroup" style="display:none;">
+              <label for="otherReason">DETAILS (OPTIONAL)</label>
+              <input type="text" id="otherReason" class="form-input" placeholder="Please specify..." />
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">Continue to Verification</button>
+          </form>
+        </div>
+        
+        <!-- Step 2: Confirmation Warning -->
+        <div class="step-container hidden" id="step2">
+          <div class="form-header">
+            <h2 style="color:var(--red);">Confirm Deletion</h2>
+            <p>This action is final. Please read the warning below carefully.</p>
+          </div>
+          
+          <div class="warning-banner">
+            <p>WARNING: Once your account is deleted, you will lose access to all your rewards, donation history, and active subscriptions. This cannot be undone.</p>
+          </div>
+          
+          <form id="confirmDeleteForm" onsubmit="event.preventDefault(); submitDeletionRequest();">
+            <div class="form-checkbox-group">
+              <input type="checkbox" id="agreeIrreversible" required />
+              <label for="agreeIrreversible">I understand that this action is permanent and completely irreversible.</label>
+            </div>
+            
+            <div class="form-group">
+              <label for="confirmText" id="confirmTextLabel">TYPE "DELETE" TO CONFIRM</label>
+              <input type="text" id="confirmText" class="form-input text-confirm-input" placeholder="DELETE" required autocomplete="off" />
+            </div>
+            
+            <div style="display:flex; gap:12px; margin-top:24px;">
+              <button type="button" class="btn btn-ghost" onclick="goToStep1()" style="flex:1;">Back</button>
+              <button type="submit" id="submitBtn" class="btn btn-red" style="flex:2;" disabled>Delete Account</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Success State -->
+        <div class="success-screen" id="successScreen">
+          <div class="success-ring">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h2>Request Submitted</h2>
+          <p id="successMessage">Your account deletion request has been submitted. A confirmation email has been sent. Your profile is now deactivated and will be sanitized in 7 business days.</p>
+          <a href="index.html" class="btn btn-ghost" style="width:100%;">Return to Home</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo"><img src="logo-transparent.png" alt="Dine Five" /></a>
+        <p>Fresh restaurant meals for just $5.99 — bringing affordable food and community support to neighborhoods everywhere.</p>
+        <div class="socials"></div>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="index.html#mission">About</a>
+        <a href="index.html#download">Contact</a>
+        <a href="index.html#cuisines">Restaurant partnerships</a>
+      </div>
+      <div class="foot-col">
+        <h4>Community</h4>
+        <a href="index.html#impact">Donation program</a>
+        <a href="index.html#impact">Recipient assistance</a>
+        <a href="index.html#impact">Give a meal</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="delete-account.html">Delete account</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 DineFive LLC · Registered in Virginia, USA.</span>
+      <div class="lp"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete Account</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  toggle.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a =>
+    a.addEventListener('click', () => { document.body.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', false); })
+  );
+
+  // Form Logic
+  const reasonSelect = document.getElementById('reason');
+  const otherReasonGroup = document.getElementById('otherReasonGroup');
+  
+  reasonSelect.addEventListener('change', () => {
+    if (reasonSelect.value === 'other') {
+      otherReasonGroup.style.display = 'block';
+      document.getElementById('otherReason').required = true;
+    } else {
+      otherReasonGroup.style.display = 'none';
+      document.getElementById('otherReason').required = false;
+    }
+  });
+
+  const step1 = document.getElementById('step1');
+  const step2 = document.getElementById('step2');
+  const successScreen = document.getElementById('successScreen');
+  const confirmTextInput = document.getElementById('confirmText');
+  const submitBtn = document.getElementById('submitBtn');
+  const agreeCheckbox = document.getElementById('agreeIrreversible');
+  const successMessage = document.getElementById('successMessage');
+
+  function goToStep2() {
+    step1.classList.add('hidden');
+    step2.classList.remove('hidden');
+  }
+
+  function goToStep1() {
+    step2.classList.add('hidden');
+    step1.classList.remove('hidden');
+  }
+
+  function validateConfirmation() {
+    const textIsValid = confirmTextInput.value.trim() === 'DELETE';
+    const checkboxIsValid = agreeCheckbox.checked;
+    submitBtn.disabled = !(textIsValid && checkboxIsValid);
+  }
+
+  confirmTextInput.addEventListener('input', validateConfirmation);
+  agreeCheckbox.addEventListener('change', validateConfirmation);
+
+  function submitDeletionRequest() {
+    // Show spinner or state in button
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing...';
+
+    const email = document.getElementById('email').value;
+
+    // Simulate network latency for a realistic experience
+    setTimeout(() => {
+      step2.classList.add('hidden');
+      successMessage.textContent = `Your request has been submitted successfully. A confirmation email has been sent to ${email}. Your Dine Five profile is now deactivated and will be permanently deleted along with all associated data within 7 business days.`;
+      successScreen.classList.add('active');
+      document.getElementById('formPanel').style.background = '#ffffff';
+    }, 1200);
+  }
+</script>
+</body>
+</html>
