@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dine Five — Fresh Restaurant Meals for Just $5.99</title>
-<meta name="description" content="Dine Five makes fresh, restaurant-prepared meals affordable for everyone — for just $5.99. Discover local restaurant partners, donate meals, and strengthen your community." />
-<meta name="keywords" content="affordable meals, restaurant partners, meal donation, $5.99 meals, community food, local restaurants" />
+<meta name="description" content="Dine Five makes fresh, restaurant-prepared meals affordable for everyone — for just $5.99. Discover local restaurant partners, gift a meal, and strengthen your community." />
+<meta name="keywords" content="affordable meals, restaurant partners, gift a meal, $5.99 meals, community food, local restaurants" />
 <meta name="theme-color" content="#FF6B35" />
 <meta property="og:title" content="Dine Five — Fresh Restaurant Meals for Just $5.99" />
 <meta property="og:description" content="Affordable, restaurant-prepared meals from local partners. Enjoy quality food, support local business, and help your community." />
@@ -153,22 +153,11 @@
   /* Phone mockup + collage */
   .hero-visual{position:relative;display:flex;justify-content:center}
   .phone{
-    position:relative;z-index:3;width:255px;height:520px;border-radius:42px;background:var(--charcoal);
+    position:relative;z-index:3;width:255px;height:540px;border-radius:42px;background:var(--charcoal);
     padding:11px;box-shadow:0 40px 80px -30px rgba(34,34,34,.55);
   }
-  .phone-screen{width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--cream);position:relative;display:flex;flex-direction:column}
-  .phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:24px;background:var(--charcoal);border-radius:0 0 16px 16px;z-index:4}
-  .ps-hero{height:190px;background-size:cover;background-position:center;position:relative}
-  .ps-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.55))}
-  .ps-tag{position:absolute;left:14px;bottom:12px;z-index:2;color:#fff}
-  .ps-tag small{display:block;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
-  .ps-tag b{font-family:'Fraunces';font-size:1.15rem}
-  .ps-body{padding:14px;flex:1}
-  .ps-row{display:flex;align-items:center;gap:10px;padding:9px;background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 4px 12px -8px rgba(0,0,0,.2)}
-  .ps-thumb{width:42px;height:42px;border-radius:10px;background-size:cover;background-position:center;flex-shrink:0}
-  .ps-row .t1{font-size:.78rem;font-weight:600}
-  .ps-row .t2{font-size:.64rem;color:var(--ink-45)}
-  .ps-price{margin-left:auto;font-weight:700;color:var(--orange);font-size:.82rem}
+  .phone-screen{width:100%;height:100%;border-radius:28px;overflow:hidden;background:#fff;padding-top:10px;position:relative;display:flex;flex-direction:column}
+  .phone-shot{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
   .collage-img{
     position:absolute;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-soft);z-index:1;
     background-size:cover;background-position:center;
@@ -346,14 +335,14 @@
       <a href="#how">How it works</a>
       <a href="#cuisines">Cuisines</a>
       <a href="#drinks">Beer &amp; Wine</a>
-      <a href="#impact">Give a meal</a>
+      <a href="#impact">Gift a meal</a>
       <a href="#about">About</a>
       <a href="#company">Company</a>
       <a href="#contact">Contact</a>
       <a href="#download">Get the app</a>
     </nav>
     <div class="nav-cta">
-      <a href="#impact" class="btn btn-red">Donate a meal</a>
+      <a href="#impact" class="btn btn-red">Gift a meal</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -365,7 +354,7 @@
   <a href="#how">How it works</a>
   <a href="#cuisines">Cuisines</a>
   <a href="#drinks">Beer &amp; Wine</a>
-  <a href="#impact">Give a meal</a>
+  <a href="#impact">Gift a meal</a>
   <a href="#about">About</a>
   <a href="#company">Company</a>
   <a href="#contact">Contact</a>
@@ -401,28 +390,8 @@
       <div class="collage-img ci-2" style="background-image:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=80&auto=format&fit=crop')"></div>
       <div class="collage-img ci-3" style="background-image:url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80&auto=format&fit=crop')"></div>
       <div class="phone">
-        <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="ps-hero" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&auto=format&fit=crop')">
-            <div class="ps-tag"><small>Near you</small><b>Today's fresh menu</b></div>
-          </div>
-          <div class="ps-body">
-            <div class="ps-row">
-              <div class="ps-thumb" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80&auto=format&fit=crop')"></div>
-              <div><div class="t1">Smash Burger Plate</div><div class="t2">Corner Diner · American</div></div>
-              <div class="ps-price">$5.99</div>
-            </div>
-            <div class="ps-row">
-              <div class="ps-thumb" style="background-image:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=200&q=80&auto=format&fit=crop')"></div>
-              <div><div class="t1">Tonkotsu Ramen</div><div class="t2">Noodle House · Asian</div></div>
-              <div class="ps-price">$5.99</div>
-            </div>
-            <div class="ps-row">
-              <div class="ps-thumb" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80&auto=format&fit=crop')"></div>
-              <div><div class="t1">Street Tacos</div><div class="t2">La Cocina · Latin</div></div>
-              <div class="ps-price">$5.99</div>
-            </div>
-          </div>
+          <img class="phone-shot" src="app-home.jpg" width="600" height="1333" alt="DineFive app home screen showing $5.99 meals from local restaurants" />
         </div>
       </div>
       <div class="price-bubble"><span><small>For only</small><b>$5.99</b></span></div>
@@ -447,7 +416,7 @@
       <div class="value-card reveal d2">
         <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Community</h3>
-        <p>Neighbors helping neighbors. Donated meals keep local kitchens busy and tables full.</p>
+        <p>Neighbors helping neighbors. Gifted meals keep local kitchens busy and tables full.</p>
       </div>
       <div class="value-card reveal d3">
         <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
@@ -492,7 +461,7 @@
       <div class="step reveal d4">
         <div class="num">04</div>
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <h3>Enjoy &amp; give back</h3>
+        <h3>Enjoy &amp; gift a meal</h3>
         <p>Great food while supporting local businesses and your community.</p>
       </div>
     </div>
@@ -542,13 +511,13 @@
   <div class="wrap">
     <div class="impact-top">
       <div class="reveal">
-        <span class="eyebrow">Community impact</span>
-        <h2 style="font-size:clamp(1.9rem,4.6vw,3rem)">Give a meal. Change a life.</h2>
-        <p class="lead" style="margin:16px 0 26px">Every donated meal helps provide fresh, restaurant-prepared food to someone facing hardship. Dine Five makes it easy for donors to support their communities while helping local restaurants thrive.</p>
-        <a href="#download" class="btn btn-primary">Donate a meal</a>
+        <span class="eyebrow">Gift a meal</span>
+        <h2 style="font-size:clamp(1.9rem,4.6vw,3rem)">Share a little kindness.</h2>
+        <p class="lead" style="margin:16px 0 26px">Every $5.99 meal you gift goes into the Dine Five community meal pool, helping someone in your community enjoy a fresh, restaurant-prepared meal — while keeping local restaurants thriving.</p>
+        <a href="#download" class="btn btn-primary">Gift a meal</a>
       </div>
       <div class="stat-grid reveal d2">
-        <div class="stat"><div class="n" style="font-size:1.05rem">Launching Soon</div><div class="l">Meals donated</div></div>
+        <div class="stat"><div class="n" style="font-size:1.05rem">Launching Soon</div><div class="l">Meals gifted</div></div>
         <div class="stat"><div class="n" style="font-size:1.05rem">Building Restaurant Partnerships</div><div class="l">Community members helped</div></div>
         <div class="stat"><div class="n" style="font-size:1.05rem">Preparing for Launch</div><div class="l">Restaurant partners</div></div>
         <div class="stat"><div class="n" style="font-size:1.05rem">Growing Our Community</div><div class="l">Cities served</div></div>
@@ -557,18 +526,18 @@
     <div class="impact-cards">
       <div class="impact-card reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.9-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
-        <h3>Donate in one tap</h3>
-        <p>Give a single meal or sponsor many — individuals, businesses, and groups all welcome.</p>
+        <h3>Gift in one tap</h3>
+        <p>Gift a single $5.99 meal or several at once — individuals, businesses, and groups all welcome.</p>
       </div>
       <div class="impact-card reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
         <h3>100% goes to meals</h3>
-        <p>Your donation pays a local restaurant to cook a fresh meal for a neighbor in need.</p>
+        <p>Each gifted meal pays a local restaurant to cook a fresh meal for a neighbor who could use a little extra.</p>
       </div>
       <div class="impact-card reveal d3">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-3-3-4 4"/></svg></div>
         <h3>See your impact</h3>
-        <p>Track the meals you've funded and watch your community impact grow over time.</p>
+        <p>See every meal you've gifted in the app and watch your community impact grow over time.</p>
       </div>
     </div>
   </div>
@@ -581,15 +550,15 @@
     <div class="reveal d1">
       <span class="eyebrow">Recipient assistance</span>
       <h2 style="font-size:clamp(1.9rem,4.6vw,3rem)">Support for those who need it most</h2>
-      <p class="lead" style="margin:16px 0 0">Through the Dine Five community program, eligible individuals can access donated meals directly through the app. Users may claim up to one donated meal per day when available.</p>
+      <p class="lead" style="margin:16px 0 0">Through the Dine Five community program, eligible individuals can claim gifted meals directly through the app. Users may claim one gifted meal every 48 hours when available.</p>
       <ul class="recipient-list">
         <li>
           <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div><b>Quiet and dignified</b><p>No long lines or paperwork — claim a meal privately, right from your phone.</p></div>
+          <div><b>Quiet and dignified</b><p>No long lines or paperwork — claim a gifted meal privately, right from your phone.</p></div>
         </li>
         <li>
           <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div><b>One meal a day</b><p>Eligible users can claim up to one donated meal per day, whenever meals are available.</p></div>
+          <div><b>One meal every 48 hours</b><p>Eligible users can claim one gifted meal every 48 hours, whenever meals are available.</p></div>
         </li>
         <li>
           <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -627,7 +596,7 @@
       <div class="feature-card reveal d4">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
         <h3>Convenient mobile ordering</h3>
-        <p>Browse, order, and donate from anywhere — all from one simple app.</p>
+        <p>Browse, order, and gift meals from anywhere — all from one simple app.</p>
       </div>
     </div>
     <p class="features-note reveal">Beer and wine availability varies by location and is offered only by participating partners where permitted by local laws.</p>
@@ -756,7 +725,7 @@
     <div class="dl-trust reveal">
       <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3z"/></svg> Free to download</div>
       <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> No subscription needed</div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.9-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg> Give back as you go</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.9-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg> Gift a meal as you go</div>
     </div>
   </div>
 </section>
@@ -778,9 +747,9 @@
       </div>
       <div class="foot-col">
         <h4>Community</h4>
-        <a href="#impact">Donation program</a>
+        <a href="#impact">Gift a meal</a>
         <a href="#impact">Recipient assistance</a>
-        <a href="#impact">Give a meal</a>
+        <a href="#impact">Claim a gifted meal</a>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
